@@ -57,3 +57,12 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   }
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
