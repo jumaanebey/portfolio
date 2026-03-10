@@ -396,9 +396,9 @@ export default function Portfolio() {
                   products that create real impact.
                 </p>
                 <p>
-                  My work spans from AI transformation engines (Continuum) to
-                  homebuyer education (HomeIQ Academy) to transitional housing
-                  solutions (Forward Horizon). I care about craft, speed, and
+                  My work spans AI-powered platforms to homebuyer
+                  education (HomeIQ Academy) to transitional housing solutions
+                  (Forward Horizon). I care about craft, speed, and
                   building things that people actually use.
                 </p>
                 <p>
