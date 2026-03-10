@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start"
   },
@@ -15,8 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
+    "bugs": {
     "url": "https://github.com/jumaanebey/portfolio/issues"
   },
   "homepage": "https://github.com/jumaanebey/portfolio#readme",
