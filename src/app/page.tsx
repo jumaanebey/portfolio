@@ -15,9 +15,10 @@ const PROJECTS = [
       'A 6-agent AI platform for midlife transformation. Deep Life Scan, Future Self archetypes, 12-week pathways, identity experiments, journaling companion, and human mentor matching — all built on a React + Fastify monorepo with Supabase and the Anthropic API.',
     tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'Supabase', 'Claude API', 'Capacitor'],
     image: 'https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f?w=800&q=80&auto=format&fit=crop',
-    url: 'https://github.com/jumaanebey/Continuum',
+    url: '#',
     featured: true,
     category: 'AI Platform',
+    nda: true,
   },
   {
     title: 'HomeIQ Academy',
@@ -253,41 +254,48 @@ export default function Portfolio() {
 
           {/* Featured projects — large cards */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {PROJECTS.filter(p => p.featured).map((project, i) => (
-              <Reveal key={project.title} delay={i * 0.1}>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block relative rounded-2xl overflow-hidden bg-white border border-ink/5 card-hover"
-                >
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider bg-accent text-white rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-[--font-display] text-2xl font-bold text-ink mb-1">{project.title}</h3>
-                    <p className="text-sm text-accent font-medium mb-3">{project.tagline}</p>
-                    <p className="text-sm text-muted leading-relaxed mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="px-2.5 py-1 text-[10px] font-medium text-ink/50 bg-ink/[0.04] rounded-full">
-                          {tag}
+            {PROJECTS.filter(p => p.featured).map((project, i) => {
+              const Wrapper = project.nda ? 'div' : 'a';
+              const linkProps = project.nda ? {} : { href: project.url, target: '_blank' as const, rel: 'noopener noreferrer' };
+              return (
+                <Reveal key={project.title} delay={i * 0.1}>
+                  <Wrapper
+                    {...linkProps}
+                    className="group block relative rounded-2xl overflow-hidden bg-white border border-ink/5 card-hover"
+                  >
+                    <div className="aspect-[16/10] overflow-hidden relative">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
+                      <span className="absolute top-4 left-4 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider bg-accent text-white rounded-full">
+                        {project.category}
+                      </span>
+                      {project.nda && (
+                        <span className="absolute top-4 right-4 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider bg-ink/80 text-white/90 rounded-full border border-white/10 backdrop-blur-sm">
+                          Under NDA &middot; Details Shared
                         </span>
-                      ))}
+                      )}
                     </div>
-                  </div>
-                </a>
-              </Reveal>
-            ))}
+                    <div className="p-6">
+                      <h3 className="font-[--font-display] text-2xl font-bold text-ink mb-1">{project.title}</h3>
+                      <p className="text-sm text-accent font-medium mb-3">{project.tagline}</p>
+                      <p className="text-sm text-muted leading-relaxed mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.tags.map(tag => (
+                          <span key={tag} className="px-2.5 py-1 text-[10px] font-medium text-ink/50 bg-ink/[0.04] rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Wrapper>
+                </Reveal>
+              );
+            })}
           </div>
 
           {/* Other projects — smaller cards */}
