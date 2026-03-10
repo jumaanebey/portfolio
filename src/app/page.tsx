@@ -62,14 +62,15 @@ const PROJECTS = [
     category: 'Sports Tech',
   },
   {
-    title: 'Amelia Norvell Coaching',
-    tagline: 'Executive Coaching Website',
+    title: 'Executive Coaching Site',
+    tagline: 'Client Website for a Coaching Practice',
     description:
       'Professional website for an executive coaching practice. Clean, trust-building design with client intake flows and a UX-first approach to presenting coaching services.',
     tags: ['Next.js', 'Tailwind', 'Vercel'],
     image: 'https://images.unsplash.com/photo-1553484771-047a44eee27b?w=800&q=80&auto=format&fit=crop',
-    url: 'https://github.com/jumaanebey/AM-site',
+    url: '#',
     category: 'Client Work',
+    nda: true,
   },
   {
     title: 'TBD Property Management',
