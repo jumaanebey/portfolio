@@ -9,11 +9,11 @@ import { useRef } from 'react';
 
 const PROJECTS = [
   {
-    title: 'Continuum',
-    tagline: 'AI-Powered Future Self Operating System',
+    title: 'NDA Project',
+    tagline: 'AI-Powered Wellness Platform',
     description:
-      'A 6-agent AI platform for midlife transformation. Deep Life Scan, Future Self archetypes, 12-week pathways, identity experiments, journaling companion, and human mentor matching — all built on a React + Fastify monorepo with Supabase and the Anthropic API.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'Supabase', 'Claude API', 'Capacitor'],
+      'Full-stack AI platform built for a wellness startup. Led architecture, frontend, and AI integration from PRD to working prototype with mobile app.',
+    tags: ['React', 'TypeScript', 'AI Integration', 'Full-Stack', 'Mobile'],
     image: 'https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f?w=800&q=80&auto=format&fit=crop',
     url: '#',
     featured: true,
